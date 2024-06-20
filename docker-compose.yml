@@ -1,0 +1,17 @@
+version: '3'
+services:
+ openvpn-server:
+  hostname: openvpn-server
+  image: registry.netred.cl:5000/openvpn-server:2.5.2
+  container_name: openvpn-server
+  restart: always
+#  ports:
+#   - "1194:1194/udp" 
+  network_mode: host
+  cap_add:
+   - NET_ADMIN
+  environment:
+   - TZ=America/Santiago
+  volumes: 
+   - ./openvpn-data/conf:/etc/openvpn
+
