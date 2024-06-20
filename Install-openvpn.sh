@@ -50,10 +50,10 @@ docker ps
 
 #Configurando openvpn.conf
 
-rm openvpn.conf
+rm ./openvpn-data/conf/openvpn.conf
 echo "Tarea completada: Se ha realizado la acción Eliminar archivo .conf anterior "
 
-cp openvpn.conf.base openvpn.conf
+cp ./openvpn-data/conf/openvpn.conf.base ./openvpn-data/conf/openvpn.conf
 echo "Tarea completada: Se ha realizado la acción Creando archivo .conf nuevo "
 
 
