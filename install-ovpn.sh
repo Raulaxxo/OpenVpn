@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 
 # Definir colores ANSI
 YELLOW='\033[1;33m'
@@ -16,6 +17,20 @@ print_error() {
     echo -e "✔ -- ${YELLOW}$(tput bold)$1$(tput sgr0)${NC} -- ${RED}$(tput bold)ERROR$(tput sgr0)${NC}"
 }
 
+# Texto ASCII
+echo "
+  ____               __      _______       
+ / __ \              \ \    / /  __ \      
+| |  | |_ __   ___ _ _\ \  / /| |__) | __  
+| |  | | '_ \ / _ \ '_ \ \/ / |  ___/ '_ \ 
+| |__| | |_) |  __/ | | \  /  | |   | | | |
+ \____/| .__/ \___|_| |_|\/   |_|   |_| |_| 
+       | |                                 
+       |_|                                 
+"
+
+print_message "Script Creado Por: Raul SIlva Gotterban"
+print_message "Reenvio de packetes Linux IPV4"
 #reenvio de packetes Linux IPV4
 sysctl -w net.ipv4.ip_forward=1
 print_message "Tarea completada: Se ha realizado la acción Reenvio de packetes"
@@ -103,7 +118,11 @@ read interface
 
 iptables -t nat -A POSTROUTING -s 10.16.48.0/24 -o $interface -j MASQUERADE
 
-iptables -t nat -L
+#iptables -t nat -L
+
+iptables -t nat -L -n -v
+
+
 print_message "Configuración de NAT"
 
 service iptables save

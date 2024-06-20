@@ -54,8 +54,8 @@ client-config-dir /etc/openvpn/ccd
 
 
 ### Debo dejar fuera de este ruteo la ip publica del servidor donde esta la VPN
-push "route 100.100.12.13 255.255.255.255 net_gateway"
+push "route 100.10.10.12 255.255.255.255 net_gateway"
 ### Rutas de VPN
 push "route 10.16.48.0 255.255.255.0"
 ### IP Privada del servidor de la VPN
-push "route 10.10.1.12 255.255.255.255"
+push "route 10.10.10.12 255.255.255.255"
