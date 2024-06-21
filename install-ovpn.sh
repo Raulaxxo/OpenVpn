@@ -113,9 +113,8 @@ systemctl start iptables
 systemctl status iptables
 print_message "Firewall configurado"
 
-ifconfig 
-print_message "Interfaces de red disponibles"
 
+print_message "Interfaces de red disponibles"
 print_message "¿Qué interfaz es la que usará?"
 ifconfig 
 print_message "Ingrese el nombre de la interfaz a continuación:"
