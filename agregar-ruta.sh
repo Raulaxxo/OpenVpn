@@ -35,7 +35,7 @@ else
     
    echo "# $comentario" >> "$ruta"
    echo "push \"route $IP 255.255.255.255\"" >> "$ruta"
-   echo "La palabra '$IP' se ha agregado al archivo '$ruta'."
+   echo "La IP '$IP' se ha agregado al Usuario '$ruta'."
    tail $ruta
 fi
 
