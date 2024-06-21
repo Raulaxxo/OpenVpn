@@ -22,8 +22,8 @@ fi
 
 NOMBRE_DEL_USUARIO=$1
 
-docker exec -it openvpn-server sh -cc " ovpn_getclient $NOMBRE_DEL_USUARIO " > $NOMBRE_DEL_USUARIO.ovpn
+docker exec -it openvpn-server sh -cc " ovpn_getclient $NOMBRE_DEL_USUARIO " > ./usuarios/$NOMBRE_DEL_USUARIO.ovpn
 
-sed -i 's/redirect-gateway def1//g' $NOMBRE_DEL_USUARIO.ovpn
+sed -i 's/redirect-gateway def1//g' ./usuarios/$NOMBRE_DEL_USUARIO.ovpn
 
 

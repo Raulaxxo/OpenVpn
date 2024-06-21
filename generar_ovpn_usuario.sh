@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cat password.txt
+
 ##parametros
 me=`basename "$0"`
 
@@ -23,3 +25,8 @@ fi
 NOMBRE_DEL_USUARIO=$1
 
 docker exec -it openvpn-server sh -cc " easyrsa build-client-full $NOMBRE_DEL_USUARIO nopass "
+
+
+./obtener_archivo_ovpn_usuario.sh $NOMBRE_DEL_USUARIO
+
+touch ./openvpn-data/conf/ccd/$NOMBRE_DEL_USUARIO

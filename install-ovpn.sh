@@ -81,6 +81,11 @@ print_message "Tarea completada: Se ha realizado la acción Eliminar archivo .co
 cp ./openvpn-data/conf/openvpn.conf.base ./openvpn-data/conf/openvpn.conf
 print_message "Tarea completada: Se ha realizado la acción Creando archivo .conf nuevo"
 
+
+sed -i '3s|.*|key /etc/openvpn/pki/private/'"$IPSERVER"'.key|' ./openvpn-data/conf/openvpn.conf
+sed -i '5s|.*|cert /etc/openvpn/pki/issued/'"$IPSERVER"'.crt|' ./openvpn-data/conf/openvpn.conf
+
+
 print_message "Ingrese la IP Privada del Server:"
 read IPPRIVADA
 print_message "Tarea completada: Se ha realizado la acción Ingresar IP Privada"

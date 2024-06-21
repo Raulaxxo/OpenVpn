@@ -1,6 +1,6 @@
 server 10.16.48.0 255.255.255.0
 verb 3
-key /etc/openvpn/pki/private/100.100.1.1.key
+key /etc/openvpn/pki/private/100.100.1.10.key
 ca /etc/openvpn/pki/ca.crt
 cert /etc/openvpn/pki/issued/100.100.1.1.crt
 dh /etc/openvpn/pki/dh.pem

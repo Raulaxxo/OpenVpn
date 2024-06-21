@@ -24,4 +24,4 @@ NOMBRE_DEL_USUARIO=$1
 
 docker exec -it openvpn-server sh -cc "  ovpn_revokeclient $NOMBRE_DEL_USUARIO remove "
 
-
+rm  openvpn-data/conf/ccd/$NOMBRE_DEL_USUARIO
