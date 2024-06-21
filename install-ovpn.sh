@@ -131,5 +131,10 @@ iptables -t nat -L -n -v
 print_message "Configuración de NAT"
 
 service iptables save
+
 print_message "Configuración guardada"
 
+print_message "Crear Usuario"
+read usuario
+
+./generar_ovpn_usuario.sh $usuario
