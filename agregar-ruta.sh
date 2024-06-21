@@ -26,12 +26,14 @@ ruta=./openvpn-data/conf/ccd/$usuario
 
 # Solicita el nombre del archivo y la palabra al usuario
 read -p "Ingrese la ip a agregar: " IP
+read -p "Comentario de donde es la IP " comentario
 
 # Verifica si la palabra existe en el archivo
 if grep -q "$IP" "$ruta"; then
    echo "La palabra '$IP' ya existe en el archivo '$ruta'."
 else
     # Agrega la palabra al archivo
+   echo "# $comentario" >> "$ruta"
    echo "push \"route $IP 255.255.255.255\"" >> "$ruta"
    echo "La palabra '$IP' se ha agregado al archivo '$ruta'."
    tail $ruta
