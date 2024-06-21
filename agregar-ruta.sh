@@ -29,12 +29,12 @@ read -p "Ingrese la ip a agregar: " IP
 
 # Verifica si la palabra existe en el archivo
 if grep -q "$IP" "$ruta"; then
-    echo "La palabra '$IP' ya existe en el archivo '$ruta'."
+   echo "La palabra '$IP' ya existe en el archivo '$ruta'."
 else
     # Agrega la palabra al archivo
    echo "push \"route $IP 255.255.255.255\"" >> "$ruta"
-    echo "La palabra '$IP' se ha agregado al archivo '$ruta'."
-    tail $ruta
+   echo "La palabra '$IP' se ha agregado al archivo '$ruta'."
+   tail $ruta
 fi
 
 
