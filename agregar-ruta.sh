@@ -34,6 +34,7 @@ else
     # Agrega la palabra al archivo
    echo "push \"route $IP 255.255.255.255\"" >> "$ruta"
     echo "La palabra '$IP' se ha agregado al archivo '$ruta'."
+    tail $ruta
 fi
 
 
